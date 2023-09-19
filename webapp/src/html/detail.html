@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">주유소 상세</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container">
+            <div class="box-gas-detail">
+              <div style="height: 300px; margin-bottom: 10px">지도영역</div>
+        
+              <div class="category-area">
+                <!-- 2022.06.20 kwy 바로주유 아이콘 변경 -->
+                <span class="txt-category baro"><span class="blind">바로주유</span></span>
+                <span class="txt-category reservation">예약가능</span>
+                <!-- *** 바로세차 추가20230502 *** -->
+                <span class="txt-category baro baro-carwash"><span class="blind">바로세차</span></span>
+              </div>
+              <div class="box-gas-info">
+                <p class="title is-3">서초꽃마을</p>
+                <ul class="bullet-list">
+                  <li>
+                    운영시간 : <span class="is-family-secondary">06:00 ~ 23:00</span>
+                  </li>
+                  <li>주소 : 서울특별시 강남구 역삼동 668-13<button type="button" class="btn-copy">복사</button></li>
+                  <li>
+                    연락처 : <a :href="`tel:02-0000-0000" class="link-tel">02-0000-0000</a>
+                  </li>
+                </ul>
+                <p class="title is-3">
+                  가격정보 <span class="txt-tit-desc">오늘(2024-07-01) 기준</span>
+                  <small class="mblock is-gray-text">가격 정보는 실제와 상이할 수 있습니다.</small>
+                </p>
+                <ul class="bullet-list type-2">
+                  <li>
+                    휘발유<span class="is-family-secondary">1,255</span>원
+                  </li>
+                  <li>
+                    경유<span class="is-family-secondary">1,255</span>원
+                  </li>
+                  <li>
+                    고급휘발유<span class="is-family-secondary">1,255</span>원
+                  </li>
+                  <li>
+                    등유<span class="is-family-secondary">1,255</span>원
+                  </li>
+                  <li>
+                    LPG<span class="is-family-secondary">1,255</span>원
+                  </li>
+                </ul>
+                <!-- 주유소 정보가 없는 경우 노출 -->
+                <div class="no-data-section">
+                  <div class="no-data">
+                    <p>등록된 유가정보가 없습니다.</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- 시설정보 -->
+              <div class="box-gas-info box-facility">
+                <p class="title is-3">시설정보</p>
+                <ul class="list-facility-info" style="text-align: -webkit-center">
+                  <li class="ico01">셀프</li>
+                  <li class="ico02">세차</li>
+                  <li class="ico03">경정비</li>
+                  <li class="ico04">편의점</li>
+                  <li class="ico05">EV충전소</li>
+                  <li  class="ico07">그린카</li>
+                </ul>
+              </div>
+        
+              <!-- 세차 2022.01.25 kwy 기상악화 멘트 수정 -->
+              <div class="box-gas-info car-wash">
+                <p class="title is-3">세차</p>
+                <ul class="bullet-list">
+                  <li>
+                    운영시간 :
+                    <span class="is-family-secondary">06:00 ~ 23:00</span>
+                    <small v-show="!siteInfoData.carWashInfo" class="mblock is-gray-text">기상 악화, 운영 사유에 따라 운영 시간이 변경될 수 있습니다.</small>
+                  </li>
+                  <!-- <li>
+                    <span class="is-family-secondary" style="white-space: pre-line; word-wrap: break-word">{{ siteInfoData.carWashInfo }}</span>
+                    <small class="mblock is-gray-text">기상 악화, 운영 사유에 따라 운영 시간이 변경될 수 있습니다.</small>
+                  </li> -->
+                </ul>
+              </div>
+        
+              <!-- 서비스정보 -->
+              <div class="box-gas-info box-facility">
+                <p class="title is-3">서비스정보</p>
+                <ul class="list-facility-info service">
+                  <!-- 2022.06.20 kwy 바로주유 아이콘 변경 -->
+                  <li class="ico01 baro-img-text"><span class="blind">바로주유</span></li>
+                  <li  class="ico02">바로주유 예약가능</li>
+                  <!-- *** 바로세차 추가 20230502*** -->
+                  <li class="ico01-carwash baro-carwash-img-text"><span class="blind">바로세차</span></li>
+                  <li class="ico03">
+                    간편결제
+                    <small class="mblock is-gray-text">네이버페이, 카카오페이</small>
+                  </li>
+                </ul>
+              </div>
+        
+              <!-- 2022.10.21 복세편주 이벤트정보 주석처리 -->
+              <!--      <div v-if="siteInfoData.eventYn === 'Y'" class="box-gas-info box-facility event-box-info-wrap">-->
+              <!--        <p class="title is-3">이벤트정보</p>-->
+              <!--        <div class="gas-event-info-box">-->
+              <!--          <p>복세편주</p>-->
+              <!--          <span>(바로주유하고 이벤트 응모하기)</span>-->
+              <!--          <span>기간 : 22.05.02 ~ 05.31</span>-->
+              <!--        </div>-->
+              <!--      </div>-->
+        
+              <div class="box-gas-info box-facility event-box-info-wrap">
+                <p class="title is-3">이벤트정보</p>
+                <div class="gas-event-info-box">
+                  <div class="juyu-advantage-title">
+                    <p>주유를 이롭게 하러</p>
+                    <p>
+                      <span><img src="/images/title_e+.png" alt="" /></span>가 찾아갑니다.
+                    </p>
+                  </div>
+                  <span>800여곳의 주유소에서 진행되는<br />에너지플러스 행사를 확인해보세요.</span>
+                  <span>2022-10-01 ~ 2022-11-15</span>
+                </div>
+              </div>
+        
+              <!-- No Data -->
+              <div class="box-gas-info gas-station-review">
+                <p class="title is-3">이용후기</p>
+                <div class="no-data-section">
+                  <div class="no-data">
+                    <p>등록된 후기가 없습니다.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- // No Data -->
+
+              <!-- review-item  -->
+                <div class="box-gas-info gas-station-review">
+                    <p class="title is-3">
+                    이용후기 <span class="is-family-secondary is-primary-text2">00</span>건
+                    </p>
+                    <div class="box-score-area">
+                    <div class="item-score-area">
+                        <span class="txt-score-subject">주유소</span>
+                        <div class="star-score">
+                        <span class="st-off">
+                            <span class="st-on" :style="`width: ${20 * reviewInfo.avgSiteEvalSc}%`"></span>
+                        </span>
+                        <span class="txt-score-num"><em>1.0</em><span class="total-score">5</span></span>
+                        </div>
+                    </div>
+                    <div class="item-score-area">
+                        <span class="txt-score-subject">세차장</span>
+                        <div class="star-score">
+                        <span class="st-off">
+                            <span class="st-on" :style="`width: ${20 * reviewInfo.avgWashEvalSc}%`"></span>
+                        </span>
+                        <span class="txt-score-num"><em>1.0</em><span class="total-score">5</span></span>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="control">
+                    <div class="select is-fullwidth">
+                        <select>
+                            <option>최신순</option>
+                        </select>
+                    </div>
+                    </div>
+                    <ul class="box-score-result">
+                        <li>
+                            <div class="score-id">qwert***</div>
+                            <div class="score-reple">가격이 저렴하고 차에 궁금한게 있었는데 친철하게 알려주셨어요</div>
+                            <div class="box-score-bottom">
+                            <div class="star-score">
+                                <span class="st-off">
+                                    <span class="st-on" :style="`width: ${20 * item.siteEvalSc}%`"></span>
+                                </span>
+                                <span class="txt-score-num"><em>4.7</em>(주유소)</span>
+                            </div>
+                            <!-- <div class="star-score">
+                                <span class="st-off">
+                                    <span class="st-on" :style="`width: ${20 * item.washEvalSc}%`"></span>
+                                </span>
+                                <span class="txt-score-num"><em>1.0</em>(세차장)</span>
+                            </div> -->
+                            <p class="txt-date">2020-12-10</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 더보기 버튼 -->
+                    <div class="has-text-centered">
+                    <button class="button is-text more">더보기</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- // Contents -->
+            <div class="is-button-fixed box-gas-buttons">
+              <div class="inner">
+                <button class="button is-dark">
+                  길안내 <span class="is-family-secondary">(620m)</span>
+                </button>
+                <button class="button btn-toggle like-btn is-active"><i class="ico"></i>찜하기</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 주유소 정보가 없는 경우, 조회 중인 경우 노출 -->
+          <!-- <div class="no-data-section">
+            <div class="no-data">
+              <p>주유소 정보가 존재하지 않습니다.</p>
+              <p>주유소 정보를 조회 중입니다.</p>
+            </div>
+          </div> -->
+
+
+        <!-- // Contents -->    
+    
+       
+
+
+
+
+
+
+    </div>
+
+    
+</body>
+
+</html>

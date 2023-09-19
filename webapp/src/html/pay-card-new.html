@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">결제카드</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container" class="baro-management-wrap" >
+            <div id="contents" class="container type-2 paycard-wrap">
+                <div class="inner is-padding-top">
+                  <div v-if="isShowHd" class="discount-card discount-card-plus type02">
+                    <div class="discount-card-content">
+                      <p class="energyplus-logo">
+                        <strong>최대 15% 할인카드로 <br /><span class="text-indent">바로주유 등록하기</span></strong>
+                      </p>
+                      <a class="btn-arrow-rig">
+                        <span class="blind">바로가기</span>
+                      </a>
+                    </div>
+                    <div class="discount-card-content">
+                      <p class="discount-pgrph">
+                        에너지플러스카드 Edition2로 바로주유<br class="dis-none" />
+                        등록하고<span> 최대 15% 할인 혜택 받으세요</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="box-credit-card auto-regist">
+                    <p>e+카드를 발급받으셨네요!<br />결제카드 자동등록하세요.</p>
+                    <a class="btn-regist">
+                      <span>등록</span>
+                    </a>
+                  </div>
+                  <div class="pay-box-wrap">
+                    <div>
+                      <div class="box-credit-card" >
+                        <div class="item-pay">
+                          <span class="title is-5"><i class="ico-creditcard"></i>신용카드</span>
+                        </div>
+                      </div>
+                      <div  class="box-credit-card">
+                        <div class="item-pay">
+                          <span class="title is-5"><i class="ico-npay"></i>네이버페이</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- No Data -->
+                  <!-- <div class="no-data-section">
+                    <div class="no-data">
+                      <p>결제카드를 등록해주세요.</p>
+                    </div>
+                  </div> -->
+                  <!-- // No Data -->
+
+                <ul class="list-credit-card">
+                    <li>
+                        <!-- 활성화 is-active 클래스 추가 비활성화 is-disabled 클래스 추가 is-delete-->
+                        <div class="box-credit-card is-active">
+                          <div>
+                            <h4 class="title is-5">
+                              현대카드 <span>(2026)</span>
+                            </h4>
+                            
+                              <div class="sub-desc">
+                                <span>사용기간</span>
+                                <span class="is-family-secondary">~ 2024-12-31</span>
+                              </div>
+
+                          </div>
+                          <button class="btn-trash"">
+                            <span class="blind">삭제</span>
+                          </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box-credit-card use-credit-card is-delete">
+                          <div>
+                            <h4 class="title is-5">
+                              현대카드 <span>(8888)</span>
+                              <i class="icon icon-npay-badge" aria-label="네이버페이"></i>
+                            </h4>
+
+                            
+                            <div class="use-credit-card-btn"><span class="blind"></span></div>
+                          </div>
+                          <button class="btn-trash"">
+                            <span class="blind">삭제</span>
+                          </button>
+                        </div>
+                    </li>                    
+                    <li>
+                        <div class="box-credit-card use-credit-card is-delete">
+                          <div>
+                            <h4 class="title is-5">
+                              현대카드 <span>(2025)</span>
+                            </h4>
+                              <div class="sub-desc">
+                                <span>사용기간</span>
+                                <span class="is-family-secondary">~ 2024-12-31</span>
+                              </div>
+                            
+                            <div class="use-credit-card-btn"><span class="blind"></span></div>
+                          </div>
+                          <button class="btn-trash"">
+                            <span class="blind">삭제</span>
+                          </button>
+                        </div>
+                    </li>                    
+                </ul>
+
+                <div class="box-bottom-noti box-bottom-type">
+                    <p class="title is-5 title-noti">결제카드는 최대 5개까지 등록할 수 있습니다.(네이버페이 포함)</p>
+                    <ul class="list-noti-area">
+                        <li class="item-txt-noti">- 네이버페이는 1개만 등록 가능(할부 불가능)</li>
+                        <li class="item-txt-noti">- 신용카드는 전 카드사 모두 등록 및 할부 가능</li>
+                        <li class="item-txt-noti">- 등록된 신용카드로 결제 시 리터당 2P 적립</li>
+                        <li class="item-txt-noti">- 신용카드 등록 시 100원 결제 후 자동 취소</li>
+                        <li class="item-txt-noti">- 지역화폐카드, 충전형 카드 등록 불가</li>
+                        <li class="item-txt-noti">- 화물복지카드 이용 시 바로할인 불가</li>
+                        <li class="item-txt-noti">- 카드청구 할인은 카드별로 다를 수 있으니 카드사에 문의하시기 바랍니다.</li>
+                    </ul>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+    <!-- // Contents -->
+       
+
+
+
+<!-- Footer -->
+<footer id="footer">
+    <nav class="bottom-navbar">
+        <ul>
+            <li>
+                <a href="main.html" class="menu-home">
+                    <i class="icon-home"></i>
+                    <span class="menu-text">홈</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-gas">
+                    <i class="icon-gas"></i>
+                    <span class="menu-text">주유소</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-ev">
+                    <i class="icon-event"></i>
+                    <span class="menu-text">이벤트</span>
+                </a>
+            </li>
+            <li>
+                <!-- D: 클릭시 #gnb [is-active] 토글 / body [is-fixed] 토글 -->
+                <a href="#" class="menu-all">
+                    <i class="icon-menu"></i>
+                    <span class="menu-text">전체</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</footer>
+<!-- // Footer -->
+
+
+    </div>
+
+    
+</body>
+
+</html>

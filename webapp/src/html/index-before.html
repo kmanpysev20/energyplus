@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="lib/swiper/swiper-bundle.min.css">
+    <!-- 20201211 accordion 추가-->
+    <link rel="stylesheet" href="lib/accordion-js/accordion.min.css">
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+    <!-- 20201211 lottie-player 추가-->
+    <script src="lib/lottie/lottie-player.js"></script>
+    <!-- 20201211 accordion 추가-->
+    <script src="lib/accordion-js/accordion.min.js"></script>
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- header -->
+        <header id="header">
+            <div class="inner">
+                <h1>
+                    <a href="/" class="nuxt-link-active">
+                        <img src="/images/bi.svg" class="bi">
+                    </a>
+                </h1>
+            </div>
+        </header>
+        <!-- // header -->
+
+        <div id="container">
+            <!-- Contents -->
+            <div id="contents">
+                <div class="main-contents">
+                    <div class="main-wrap">
+                        <div class="rows">
+                            <div class="row">
+                                <!-- 슬라이드 배너 (as-is 산출물과 동일) -->
+                                <div class="main-banner-slider">
+                                    <!-- 2021-05-31 메인 이벤트 배너 추가 -->
+                                    <img class="main-banner-badge show" src="images/event-banner-badge.png" />
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <!-- 2021.12.22 100일기념 배너추가 -->
+                                            <div class="swiper-slide">
+                                                <a href="#" title="마침내, 15% 주유할인카드 시대">
+                                                    <div class="box-banner-area main-banner-event100">
+                                                        <div class="box item-banner">
+                                                            <dl class="item-banner-info">
+                                                                <dt class="gift-tit">
+                                                                    에너지플러스 앱100일 기념 이벤트
+                                                                </dt>
+                                                                <dd>
+                                                                    감사의 마음을 담아<br />
+                                                                    푸짐한 경품을 더해드려요!
+                                                                </dd>
+                                                            </dl>
+                                                            <p>2021-12-23 ~ 2022-01-21</p>
+                                                            <div class="item-banner-bt">
+                                                                <i class="icon-baro-all-gift"></i>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 이벤트 배너 이미지 -->
+                                                        <div class="item-image-area">
+                                                            <div class="none-floating-bg">
+                                                                <div class="main-visual-img">
+                                                                    <span class="blind">100days event</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- 2021-09-07 배너 추가 -->
+                                            <!-- Slide  -->
+                                            <div class="swiper-slide">
+                                                <!-- S: 마침내, 15% 주유할인카드 시대 -->
+                                                <!-- 2022.05.24 날짜 수정 -->
+                                                <a href="#" title="마침내, 15% 주유할인카드 시대">
+                                                    <div class="box-banner-area main-banner-plus">
+                                                        <div class="box item-banner">
+                                                            <dl class="item-banner-info">
+                                                                <dt class="event-text-bg">
+                                                                    마침내, 15% 주유할인카드 시대
+                                                                </dt>
+                                                                <dd>
+                                                                    에너지플러스카드<br />
+                                                                    Edition 2
+                                                                    <small class="date">2022-07-01 ~ 2022-07-31</small>
+                                                                </dd>
+                                                                <span class="event-bg blind"></span>
+                                                            </dl>
+                                                            <div class="item-banner-bt">
+                                                                <i class="icon-plus-card"></i>
+                                                                <strong class="txt-desc">주유시</strong>
+                                                                <span class="long-arrow"></span>
+                                                                <span>15% 할인 </span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 이벤트 배너 이미지 -->
+                                                        <div class="item-image-area">
+                                                            <div class="floating-bg">
+                                                                <div class="main-visual-img">
+                                                                    <span class="blind">에디션 카드</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- 2021-03-24 배너 추가 -->
+                                            <!-- Slide  -->
+                                            <div class="swiper-slide">
+                                                <!-- S: 바로주유 알아보기 -->
+                                                <a href="#" title="바로주유 알아보기">
+                                                    <div class="box-banner-area main-banner-baro">
+                                                        <div class="box item-banner">
+                                                            <dl class="item-banner-info">
+                                                                <dt>바로주유 알아보기</dt>
+                                                                <dd>
+                                                                    할인,결제,적립을 한 번에<br />
+                                                                    쉽고 편한 바로주유 알아보기
+                                                                </dd>
+                                                            </dl>
+                                                            <div class="item-banner-bt">
+                                                                <i class="icon-baro-all"></i>
+                                                                <span class="long-arrow"></span>
+                                                                <span class="gray-small-bg">바로주유</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 이벤트 배너 이미지 -->
+                                                        <div class="item-image-area">
+                                                            <div class="floating-bg">
+                                                                <div class="main-visual-img">
+                                                                    <span class="blind">phone</span>
+                                                                </div>
+                                                                <div class="twinkle-area">
+                                                                    <span class="main-twinkle-dot"></span>
+                                                                    <span class="main-twinkle-s"></span>
+                                                                    <span class="main-twinkle-sw"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <!-- Slide 1 -->
+                                            <div class="swiper-slide">
+                                                <!-- S: 주유실적 이벤트 -->
+                                                <!-- 2022.06.15 바로주유 이벤트 이미지 수정 -->
+                                                <a href="#" title="주유실적 이벤트">
+                                                    <div class="box-banner-area main-banner-perform">
+                                                        <div class="box item-banner">
+                                                            <dl class="item-banner-info">
+                                                                <!-- 2021-03-18 이벤트 배너 타이틀 변경 -->
+                                                                <dt>바로주유 바로혜택</dt>
+                                                                <dd>
+                                                                    5만원 이상 바로주유 하셨나요?<br />
+                                                                    주유할인쿠폰 바로 챙겨가세요.
+                                                                    <small class="date">2022-04-01 ~ 2022-06-30</small>
+                                                                </dd>
+                                                            </dl>
+                                                            <!-- 2021-02-10 로그인 후 -주유실적 현황 출력 -->
+                                                            <!-- 2021-04-20 progress 스타일 수정 -->
+                                                            <div class="item-progress-area">
+                                                                <div class="progress-ruler-wrap">
+                                                                    <table class="progress-ruler">
+                                                                        <caption>
+                                                                            주유실적 이벤트 실적달성
+                                                                        </caption>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <!-- 2021.12.28 하단 게이지 25 에서 ~50 으로 증가 -->
+                                                                                <!-- D: progress [is-active] add-->
+                                                                                <td class="is-active">1</td>
+                                                                                <td class="is-active">2</td>
+                                                                                <td class="is-active">3</td>
+                                                                                <td>4</td>
+                                                                                <td>5</td>
+                                                                                <td>6</td>
+                                                                                <td>7</td>
+                                                                                <td>8</td>
+                                                                                <td>9</td>
+                                                                                <td>10</td>
+                                                                                <td>11</td>
+                                                                                <td>12</td>
+                                                                                <td>13</td>
+                                                                                <td>14</td>
+                                                                                <td>15</td>
+                                                                                <td>16</td>
+                                                                                <td>17</td>
+                                                                                <td>18</td>
+                                                                                <td>19</td>
+                                                                                <td>20</td>
+                                                                                <td>21</td>
+                                                                                <td>22</td>
+                                                                                <td>23</td>
+                                                                                <td>24</td>
+                                                                                <td>25</td>
+                                                                                <td>26</td>
+                                                                                <td>27</td>
+                                                                                <td>28</td>
+                                                                                <td>29</td>
+                                                                                <td>30</td>
+                                                                                <td>31</td>
+                                                                                <td>32</td>
+                                                                                <td>33</td>
+                                                                                <td>34</td>
+                                                                                <td>35</td>
+                                                                                <td>36</td>
+                                                                                <td>37</td>
+                                                                                <td>38</td>
+                                                                                <td>39</td>
+                                                                                <td>40</td>
+                                                                                <td>41</td>
+                                                                                <td>42</td>
+                                                                                <td>43</td>
+                                                                                <td>44</td>
+                                                                                <td>45</td>
+                                                                                <td>46</td>
+                                                                                <td>47</td>
+                                                                                <td>48</td>
+                                                                                <td>49</td>
+                                                                                <td>50</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="item-progress">
+                                                                    <!-- D: progress-rate width로 조절 -->
+                                                                    <p class="progress-rate" style="width: 12%">
+                                                                        <span class="blind">40%</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- 2021-02-18 수정 -->
+                                                            <div class="tooltip-area">
+                                                                <p class="tooltip">
+                                                                    <strong class="is-primary-text">실적달성!
+                                                                    </strong>
+                                                                    쿠폰을 받으세요.
+                                                                    <i class="icon-emoji smiley"></i>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 이벤트 배너 이미지 -->
+                                                        <div class="item-image-area">
+                                                            <div class="floating-bg">
+                                                                <div class="main-visual-img">
+                                                                    <span class="blind">차 이미지</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <!-- Slide 2 -->
+                                            <div class="swiper-slide">
+                                                <!-- S: 미션 스탬프 벤트-->
+                                                <a href="#" title="미션 스탬프">
+                                                    <div class="box-banner-area main-banner-stamp">
+                                                        <div class="box item-banner">
+                                                            <dl class="item-banner-info">
+                                                                <dt>미션 스탬프</dt>
+                                                                <dd>
+                                                                    스탬프를 전부 모으면<br />
+                                                                    5,000P를 적립해드립니다.
+                                                                    <span class="date">2020-07-01 ~ 2020-10-31</span>
+                                                                </dd>
+                                                            </dl>
+                                                            <div class="item-banner-bt">
+                                                                <i class="icon-stamp is-large"></i>
+                                                                <span class="icon-multiply"></span>
+                                                                <strong class="is-family-secondary">5</strong>
+                                                                <span class="long-arrow"></span>
+                                                                <span class="gs-point blind">GS&POINT</span>
+                                                                <strong class="is-family-secondary">5,000P</strong>
+                                                            </div>
+
+                                                            <!-- 2021-02-18 말풍선 추가 -->
+                                                            <div class="tooltip-area">
+                                                                <p class="tooltip">
+                                                                    <span class="is-primary-text">스탬프 항목 명</span>
+                                                                    스탬프 획득!
+                                                                    <i class="icon-emoji party"></i>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 이벤트 배너 이미지 -->
+                                                        <div class="item-image-area">
+                                                            <div class="floating-bg">
+                                                                <div class="main-visual-img">
+                                                                    <span class="blind">스탬프</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <!-- Slide 3 -->
+                                            <div class="swiper-slide">
+                                                <!-- S: 친구 초대  -->
+                                                <a href="#" title="친구 초대">
+                                                    <div class="box-banner-area main-banner-invite">
+                                                        <div class="box item-banner">
+                                                            <dl class="item-banner-info">
+                                                                <dt>친구 초대</dt>
+                                                                <dd>
+                                                                    Energy plus 초대할 때마다 <br />
+                                                                    친구도 나도 함께 할인
+                                                                    <small class="date">2020-07-01 ~ 2020-10-31</small>
+                                                                </dd>
+                                                            </dl>
+                                                            <div class="item-banner-bt">
+                                                                <i class="icon-me is-large"></i>
+                                                                <i class="icon-friend is-large"></i>
+                                                                <span class="long-arrow"></span>
+                                                                <span class="icon-coupon-small type-2"><span class="blind">쿠폰</span></span>
+                                                                <span class="icon-coupon-small type-3"><span class="blind">쿠폰</span></span>
+                                                            </div>
+
+                                                            <!-- 2021-02-18 말풍선 추가 -->
+                                                            <div class="tooltip-area">
+                                                                <p class="tooltip">
+                                                                    <span class="is-primary-text">친구초대</span>
+                                                                    쿠폰도착!
+                                                                    <i class="icon-emoji present"></i>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 이벤트 배너 이미지 -->
+                                                        <div class="item-image-area">
+                                                            <div class="floating-bg">
+                                                                <div class="main-visual-img">
+                                                                    <span class="blind">초대하기</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- swiper pagination -->
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <!-- // 슬라이드 배너 -->
+
+                                <!-- 쿠폰 -->
+                                <div class="coupon-area">
+                                    <div class="inner">
+                                    <a class="coupon-list">
+                                        <div class="coupon-item">
+                                            <i class="icons coupon-gas hide" aria-label="주유쿠폰"></i>
+                                            <div>
+                                                <span class="title is-7">주유쿠폰</span>
+                                                <strong class="count">0</strong>
+                                            </div>
+                                        </div>
+                                        <div class="coupon-item">
+                                            <i class="icons coupon-carwash hide" aria-label="세차쿠폰"></i>
+                                            <div>
+                                                <span class="title is-7">세차쿠폰</span>
+                                                <strong class="count">0</strong>
+                                            </div>
+                                        </div>
+                                        <!-- *** 포인트 카드  *** -->
+                                        <div class="coupon-item">
+                                            <div class="gsnpoint-wrap">
+                                                <div class="gs-point">
+                                                    <div class="btn-save-point" aria-label="바코드"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                                <!-- // 쿠폰 -->
+                            </div>
+
+
+                            <!-- 로그인 전 -->
+                            <div class="login-before-wrap">
+                                <div class="row green-bg">
+                                    <div class="main-card-slider before">
+                                        <div class="main-top-visual-area">
+                                        <p class="title is-1">
+                                            결제는<br />
+                                            <strong>한번에 제대로</strong><br />
+                                            적립과 할인은<br />
+                                            <strong>저절로</strong>
+                                        </p>
+                                        <div>
+                                            <button class="button baro-img-button">
+                                                <span class="blind">바로주유 시작</span>
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                            <!-- // 로그인 전 -->
+
+
+                        </div>
+                    </div>
+                </div>
+            <!-- // Contents -->
+        </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <nav class="bottom-navbar">
+                <ul>
+                    <li>
+                        <a href="main.html" class="menu-home">
+                            <i class="icon-home"></i>
+                            <span class="menu-text">홈</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-gas">
+                            <i class="icon-gas"></i>
+                            <span class="menu-text">주유소</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-ev">
+                            <i class="icon-event"></i>
+                            <span class="menu-text">이벤트</span>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- D: 클릭시 #gnb [is-active] 토글 / body [is-fixed] 토글 -->
+                        <a href="#" class="menu-all">
+                            <i class="icon-menu"></i>
+                            <span class="menu-text">전체</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </footer>
+        <!-- // Footer -->
+
+        <!-- gnb -->
+
+        <!-- // gnb -->
+    </div>
+
+    <script>
+        // 슬라이드 배너 Swiper
+        var swiper = new Swiper(".main-banner-slider > .swiper-container", {
+            spaceBetween: 24,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+        });
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_uhermayj.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop controls autoplay>
+    </lottie-player>
+</body>
+
+</html>

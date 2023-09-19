@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">바로주유 등록</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container">
+            <!-- Contents -->
+            <div id="contents" class="container overflow-y">
+
+                <div>
+                    <div class="baro-wrap">
+                      <div class="form-grid">
+                        <div class="pay-box-wrap">
+                          <div class="inner">
+                            <div class="box-credit-card is-active" >
+                              <div class="item-pay">
+                                <span class="title is-5"><i class="ico-creditcard"></i>신용카드</span>
+                              </div>
+                            </div>
+                            <div v-if="naverpayUseYn" class="box-credit-card">
+                              <div class="item-pay">
+                                <span class="title is-5"><i class="ico-npay"></i>네이버페이</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 네이버페이 선택 -->
+                        <div class="creditcard-choice-wrap hide">
+                          <ul class="inner card-list">
+                            <div>
+                              <li class="card-item">
+                                <div>
+                                  <span>네이버페이 결제</span>
+                                  <span><i class="icon-help"></i><span class="blind">도움말</span></span>
+                                </div>
+                              </li>
+                
+                              <li class="card-item">
+                                <div class="add-card-box">
+                                  <button class="icon-plus is-large"><span class="blind">추가</span></button>
+                                  <p>네이버페이 추가 (최대 1개)</p>
+                                </div>
+                              </li>
+                              <li >
+                                <div class="button-selectbox-wrap">
+                                  <button class="button-selectbox is-fullwidth" style="background-image: none"></button>
+                                </div>
+                              </li>
+                            </div>
+                          </ul>
+                        </div>
+                        <!-- 신용카드 선택 -->
+                        <div class="creditcard-choice-wrap">
+                          <ul class="inner card-list">
+                            <div>
+                              <li class="card-item">
+                                <div>
+                                  <span>신용카드 결제</span>
+                                  <span><i class="icon-help"></i><span class="blind">도움말</span></span>
+                                </div>
+                              </li>
+                
+                              <li class="card-item">
+                                <div class="add-card-box" @click="connectPG(true)">
+                                  <button class="icon-plus is-large"><span class="blind">추가</span></button>
+                                  <p>결제카드 추가 (최대 5개)</p>
+                                </div>
+                              </li>
+                              <li v-else>
+                                <!-- 결재카드 선택 -->
+                                <div class="button-selectbox-wrap">
+                                  <button class="button-selectbox is-fullwidth">현대 (2026) <small class="is-gray-text">사용기간 ~2024-03-25</small></button>
+                                </div>
+                                <!-- 할부 선택 -->
+                                
+                                  <div  class="button-selectbox-wrap">
+                                    <button class="button-selectbox is-fullwidth is-disabled">일시불</button>
+                                  </div>
+                                
+                                <div class="level-left">
+                                  <label class="checkbox"
+                                    ><input v-model="isHDCardCoPntUseYn" :disabled="validHDCardCoPntUseYn" type="checkbox" @change="changeHDCardCoPntUseYn" /><i></i><span>현대카드 M포인트 사용</span>
+                                  </label>
+                                  <div class="mpoint-item">
+                                    <div class="left-area is-gray-text">
+                                      <small class="word-block">* M포인트가 있는 카드 결제 시 적용됩니다. </br> - 리터당 80 M포인트 사용</small>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </div>
+                          </ul>
+                        </div>
+                
+                        <div class="discount-card-wrap hide">
+                          <div class="inner">
+                            <div class="discount-card discount-card-plus type02">
+                              <div class="discount-card-content">
+                                <p class="energyplus-logo">
+                                  <strong> 에너지플러스 카드로 <br /><span class="text-indent">최대 15%할인 혜택 받기</span></strong>
+                                </p>
+                                <a class="btn-arrow-rig">
+                                  <span class="blind">바로가기</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- /// -->
+                      </div>
+                    </div>
+                    <!-- 하단 버튼 -->
+                    <div class="is-button-fixed">
+                      <div class="inner">
+                        <div class="buttons">                          
+                            <button class="button is-half is-outline is-dark">이전</button>
+                            <button class="button is-half is-dark">등록완료</button>                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- // Contents -->
+        </div>
+
+        <!-- bottom sheet -->
+        @@include('./include/bottom-sheet-modal-pay-list-new.html')
+
+    </div>
+
+</body>
+
+</html>

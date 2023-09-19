@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  @@include('./include/head.html')
+  <body>
+    @@include('./include/skip_navi.html')
+    <div id="wrap" role="main">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <a href="#" class="is-back">
+            <i class="icon-arrow-left"></i>
+            <span class="blind">이전</span>
+          </a>
+          <div class="has-text-centered">
+            <h2 class="title is-3">바로주유 관리</h2>
+          </div>
+        </div>
+      </header>
+      <!-- // Header -->
+
+      <div id="container" class="baro-management-wrap">
+        <div id="contents" class="container full-height">
+          <section class="top-fixed-section">
+            <div class="tab-area b-tabs">
+              <nav class="tabs">
+                <ul>
+                  <li class="is-active">
+                    <a href="#">
+                      <span>바로주유</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span>바로주유예약</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </section>
+          <section class="contents-section tab-section">
+            <div class="inner">
+              <div class="box-point-list">
+                <button type="button" class="btn-enrollment-card">
+                  <i class="ico-plus"></i>바로주유 등록
+                </button>
+              </div>
+              <div class="level txt-enrollment-desc">
+                <p>
+                  바로주유는 <strong>최대 5개</strong>까지 등록할 수 있습니다.
+                </p>
+              </div>
+              <!-- 미동록 시 -->
+              <!-- <div class="no-data">
+                            <p>바로주유를 등록해주세요.</p>
+                        </div> -->
+              <div class="card-area">
+                <div class="list-group">
+                  <div class="card-list-wrap">
+                    <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                    <div class="card pattern gasoline">
+                      <div class="card-content">
+                        <div class="nick">
+                          <span class="name">내차 씽씽</span>
+                          <button class="button-fav button-fav-on">
+                            <span class="blind">대표패턴</span>
+                          </button>
+                        </div>
+                        <div class="info-area">
+                          <span class="oil">휘발유</span>
+                          <span>
+                            <span class="price">10,000</span>
+                            <span class="oil is-normal-text">원</span>
+                          </span>
+
+                          <!-- button draggable -->
+                          <button class="btn-draggable">
+                            <span class="blind">이동하기</span>
+                          </button>
+                        </div>
+                        <ul class="card-info-box">
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-point"></i>포인트
+                              <span>사용하지 않음</span></small
+                            >
+                            <small
+                              ><i class="icon icon-card-coupon"></i>쿠폰
+                              <span>최대할인순</span></small
+                            >
+                          </li>
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-discount"></i>
+                              보너스카드</small
+                            >
+                            <!-- <small >
+                                                    <i class="icon icon-card-discount"></i>
+                                                    <div class="is-red-text">바로할인_선택유종 할인불가</div>
+                                                    </small> -->
+                          </li>
+                          <li class="card-info-item">
+                            <small class="creditcard-name">
+                              <!-- *** npay 사용 시 class명 icon-card-credit을 icon-card-credit-npay로 변경해주세요 *** -->
+                              <i class="icon icon-card-credit"></i>
+                              현대카드 <span>(2026)</span>
+                              <small class="is-gray-text">
+                                사용기간 <em>~2024-03-25</em></small
+                              >
+                            </small>
+                          </li>
+                          <!-- 알럿 문구 노출 시 -->
+                          <!-- <li class="card-info-item">
+                                                    <small class="creditcard-name">
+                                                    <i class="icon icon-card-credit"></i>
+                                                    <div class="card-expired">결제카드 유효기간이 만료되었습니다.</div>
+                                                    </small>
+                                                </li> -->
+                        </ul>
+                        <div class="buttons">
+                          <button class="button is-half is-medium is-gray">
+                            삭제
+                          </button>
+                          <button class="button is-half is-medium is-gray">
+                            패턴수정
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-list-wrap">
+                    <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                    <div class="card pattern premium">
+                      <div class="card-content">
+                        <div class="nick">
+                          <span class="name">내차 씽씽</span>
+                          <button class="button-fav button-fav-off">
+                            <span class="blind">대표패턴</span>
+                          </button>
+                        </div>
+                        <div class="info-area">
+                          <span class="oil">고급휘발유</span>
+                          <span>
+                            <span class="price">30</span>
+                            <span class="oil is-normal-text">리터</span>
+                          </span>
+
+                          <!-- button draggable -->
+                          <button class="btn-draggable">
+                            <span class="blind">이동하기</span>
+                          </button>
+                        </div>
+                        <ul class="card-info-box">
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-point"></i>포인트
+                              <span>사용하지 않음</span></small
+                            >
+                            <small
+                              ><i class="icon icon-card-coupon"></i>쿠폰
+                              <span>최대할인순</span></small
+                            >
+                          </li>
+                          <li class="card-info-item">
+                            <small>
+                              <i class="icon icon-card-discount"></i>
+                              <div class="is-red-text">
+                                바로할인_선택유종 할인불가
+                              </div>
+                            </small>
+                          </li>
+                          <!-- 알럿 문구 노출 시 -->
+                          <li class="card-info-item">
+                            <small class="creditcard-name">
+                              <i class="icon icon-card-credit"></i>
+                              <div class="card-expired">
+                                결제카드 유효기간이 만료되었습니다.
+                              </div>
+                            </small>
+                          </li>
+                        </ul>
+                        <div class="buttons">
+                          <button class="button is-half is-medium is-gray">
+                            삭제
+                          </button>
+                          <button class="button is-half is-medium is-gray">
+                            패턴수정
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-list-wrap">
+                    <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                    <div class="card pattern diesel">
+                      <div class="card-content">
+                        <div class="nick">
+                          <span class="name">내차 씽씽</span>
+                          <button class="button-fav button-fav-off">
+                            <span class="blind">대표패턴</span>
+                          </button>
+                        </div>
+                        <div class="info-area">
+                          <span class="oil">경유</span>
+                          <span>
+                            <span class="price">가득</span>
+                            <!-- <span class="oil is-normal-text">원</span> -->
+                          </span>
+
+                          <!-- button draggable -->
+                          <button class="btn-draggable">
+                            <span class="blind">이동하기</span>
+                          </button>
+                        </div>
+                        <ul class="card-info-box">
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-point"></i>포인트
+                              <span>사용하지 않음</span></small
+                            >
+                            <small
+                              ><i class="icon icon-card-coupon"></i>쿠폰
+                              <span>최대할인순</span></small
+                            >
+                          </li>
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-discount"></i>
+                              보너스카드</small
+                            >
+                          </li>
+                          <li class="card-info-item">
+                            <small class="creditcard-name">
+                              <!-- *** npay 사용 시 class명 icon-card-credit을 icon-card-credit-npay로 변경해주세요 *** -->
+                              <i class="icon icon-card-credit"></i>
+                              현대카드 <span>(2026)</span>
+                              <small class="is-gray-text">
+                                사용기간 <em>~2024-03-25</em></small
+                              >
+                            </small>
+                          </li>
+                        </ul>
+                        <div class="buttons">
+                          <button class="button is-half is-medium is-gray">
+                            삭제
+                          </button>
+                          <button class="button is-half is-medium is-gray">
+                            패턴수정
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-list-wrap">
+                    <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                    <div class="card pattern butan">
+                      <div class="card-content">
+                        <div class="nick">
+                          <span class="name">내차 씽씽</span>
+                          <button class="button-fav button-fav-off">
+                            <span class="blind">대표패턴</span>
+                          </button>
+                        </div>
+                        <div class="info-area">
+                          <span class="oil">LPG</span>
+                          <span>
+                            <span class="price">20</span>
+                            <span class="oil is-normal-text">리터</span>
+                          </span>
+
+                          <!-- button draggable -->
+                          <button class="btn-draggable">
+                            <span class="blind">이동하기</span>
+                          </button>
+                        </div>
+                        <ul class="card-info-box">
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-point"></i>포인트
+                              <span>사용하지 않음</span></small
+                            >
+                            <small
+                              ><i class="icon icon-card-coupon"></i>쿠폰
+                              <span>최대할인순</span></small
+                            >
+                          </li>
+                          <li class="card-info-item">
+                            <small
+                              ><i class="icon icon-card-discount"></i>
+                              보너스카드</small
+                            >
+                          </li>
+                          <li class="card-info-item">
+                            <small class="creditcard-name">
+                              <!-- *** npay 사용 시 class명 icon-card-credit을 icon-card-credit-npay로 변경해주세요 *** -->
+                              <i class="icon icon-card-credit"></i>
+                              현대카드 <span>(2026)</span>
+                              <small class="is-gray-text">
+                                사용기간 <em>~2024-03-25</em></small
+                              >
+                            </small>
+                          </li>
+                        </ul>
+                        <div class="buttons">
+                          <button class="button is-half is-medium is-gray">
+                            삭제
+                          </button>
+                          <button class="button is-half is-medium is-gray">
+                            패턴수정
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- // Contents -->
+      </div>
+
+      <!-- Footer -->
+      @@include('./include/footer.html')
+      <!-- // Footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="icon_arrow" transform="translate(0 0)">
+    <rect id="사각형_668" data-name="사각형 668" width="16" height="16" transform="translate(0 0)" fill="none"/>
+    <path id="arrow" d="M7.5,7.66a.749.749,0,0,1-.54-.219L1.527,2.009A.75.75,0,0,1,2.588.949L7.5,5.859l4.91-4.91a.75.75,0,0,1,1.06,1.06L8.038,7.44a.747.747,0,0,1-.53.219Z" transform="translate(4.271 15.489) rotate(-90)" fill="#aeaeae"/>
+  </g>
+</svg>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">바로주유 관리</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container" class="baro-management-wrap" >
+            <div id="contents" class="container full-height">
+                <section class="top-fixed-section">
+                <div class="tab-area b-tabs">
+                    <nav class="tabs">
+                    <ul>
+                        <li>
+                            <a href="#">
+                            <span>바로주유</span>
+                        </a>
+                        </li>
+                        <li class="is-active">
+                            <a href="#">
+                            <span>바로주유예약</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>
+                        </div>
+                </section>
+                <section  class="contents-section tab-section">
+                    <div class="inner">
+                      <div class="box-rez-list">
+                         <!-- 미동록 시 -->
+                        <!-- <div class="no-data">
+                          <p>최근 3개월간 바로주유 예약 내역이 없습니다.</p>
+                        </div> -->
+                        <div class="card-area">
+                          <div class="list-group">
+
+                            <div class="card-area card-wrap">
+                                <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                                <div class="card pattern gasoline">
+                                  <div class="card-content">
+                                    <div class="level rez-status-area">
+                                      <p class="align-left">
+                                        <small class="tit-station">서초꽃마을</small>
+                                      </p>
+                                      <p class="align-right">
+                                        <span  class="rez-status">
+                                          <em class="is-family-secondary">~2024-12-31</em>
+                                        </span>
+                                        <!-- <span class="rez-status status-cancel">예약취소</span> -->
+                                      </p>
+                                    </div>
+                                    <dl class="rez-price-info">
+                                      <dt>고급휘발유</dt>
+                                      <dd>
+                                        <span class="is-bold-text">15,750</span>원 (10리터)
+                                      </dd>
+                                      <dt>예약가</dt>
+                                      <dd>1,575원/리터</dd>
+                                    </dl>
+                                    <ul class="card-info-box">
+                                      <li class="card-info-item">
+                                        <small><i class="icon icon-card-point"></i>포인트 <span>사용하지 않음</span></small>
+                                        <small v-if="item.cpnUseYn === 'Y'"><i class="icon icon-card-coupon"></i>쿠폰 <span>사용하지 않음</span></small>
+                                       </li>
+                                      <li class="card-info-item">
+                                        <small >
+                                          <i class="icon icon-card-discount"></i>
+                                          <div>보너스카드</div>
+                                        </small>
+                                        <!-- <small >
+                                          <i class="icon icon-card-discount"></i>
+                                          <div class="is-red-text">바로할인_선택유종 할인불가</div>
+                                        </small> -->
+                                      </li>
+                                      <li class="card-info-item">
+                                        <small class="creditcard-name">
+                                            <!-- npy사용 시 icon-card-credit-npay 변경 -->
+                                          <i class="icon icon-card-credit"></i>
+                                          현대카드 <span>(2026)</span>
+                                          <small class="is-gray-text">
+                                            사용기간 <em> ~2024-12-31</em>
+                                          </small>
+                                        </small>
+                                        <!--  알림 문구 노출 시 -->
+                                        <!-- <small class="is-red-text">
+                                          <i class="icon icon-card-credit"></i>
+                                          현대카드 (2026) 만료
+                                        </small> -->
+                                      </li>
+                                    </ul>
+                                    <div class="buttons">
+                                      <button  class="button is-medium is-gray">예약취소</button>
+                                      <!-- <button class="button is-medium is-gray" >삭제</button> -->
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card-area card-wrap">
+                                <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                                <div class="card pattern gasoline is-expired">
+                                  <div class="card-content">
+                                    <div class="level rez-status-area">
+                                      <p class="align-left">
+                                        <small class="tit-station">서초꽃마을</small>
+                                      </p>
+                                      <p class="align-right">
+                                        <!-- <span  class="rez-status">
+                                          <em class="is-family-secondary">~2024-12-31</em>
+                                        </span> -->
+                                        <span class="rez-status status-cancel">예약취소</span>
+                                      </p>
+                                    </div>
+                                    <dl class="rez-price-info">
+                                      <dt>고급휘발유</dt>
+                                      <dd>
+                                        <span class="is-bold-text">15,750</span>원 (10리터)
+                                      </dd>
+                                      <dt>예약가</dt>
+                                      <dd>1,575원/리터</dd>
+                                    </dl>
+                                    <ul class="card-info-box">
+                                      <li class="card-info-item">
+                                        <small><i class="icon icon-card-point"></i>포인트 <span>사용하지 않음</span></small>
+                                        <small v-if="item.cpnUseYn === 'Y'"><i class="icon icon-card-coupon"></i>쿠폰 <span>사용하지 않음</span></small>
+                                       </li>
+                                      <li class="card-info-item">
+                                        <small >
+                                          <i class="icon icon-card-discount"></i>
+                                          <div>보너스카드</div>
+                                        </small>
+                                        <!-- <small >
+                                          <i class="icon icon-card-discount"></i>
+                                          <div class="is-red-text">바로할인_선택유종 할인불가</div>
+                                        </small> -->
+                                      </li>
+                                      <li class="card-info-item">
+                                        <small class="creditcard-name">
+                                            <!-- npy사용 시 icon-card-credit-npay 변경 -->
+                                          <i class="icon icon-card-credit"></i>
+                                          현대카드 <span>(2026)</span>
+                                          <small class="is-gray-text">
+                                            사용기간 <em> ~2024-12-31</em>
+                                          </small>
+                                        </small>
+                                        <!--  알림 문구 노출 시 -->
+                                        <!-- <small class="is-red-text">
+                                          <i class="icon icon-card-credit"></i>
+                                          현대카드 (2026) 만료
+                                        </small> -->
+                                      </li>
+                                    </ul>
+                                    <div class="buttons">
+                                      <!-- <button  class="button is-medium is-gray">예약취소</button> -->
+                                      <button class="button is-medium is-gray" >삭제</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="card-area card-wrap">
+                                <!-- card pattern 뒤에 유종별 class 휘발류: gasoline, 고급휘발류: premium, 경유: diesel, LPG: butan  사용 -->
+                                <div class="card pattern premium is-expired">
+                                  <div class="card-content">
+                                    <div class="level rez-status-area">
+                                      <p class="align-left">
+                                        <small class="tit-station">서초꽃마을</small>
+                                      </p>
+                                      <p class="align-right">
+                                        <span class="rez-status status-expired">기간만료</span>
+                                      </p>
+                                    </div>
+                                    <dl class="rez-price-info">
+                                      <dt>고급휘발유</dt>
+                                      <dd>
+                                        <span class="is-bold-text">15,750</span>원 (10리터)
+                                      </dd>
+                                      <dt>예약가</dt>
+                                      <dd>1,575원/리터</dd>
+                                    </dl>
+                                    <ul class="card-info-box">
+                                      <li class="card-info-item">
+                                        <small><i class="icon icon-card-point"></i>포인트 <span>사용하지 않음</span></small>
+                                        <small v-if="item.cpnUseYn === 'Y'"><i class="icon icon-card-coupon"></i>쿠폰 <span>사용하지 않음</span></small>
+                                       </li>
+                                      <li class="card-info-item">
+                                        <small >
+                                          <i class="icon icon-card-discount"></i>
+                                          <div>보너스카드</div>
+                                        </small>
+                                        <!-- <small >
+                                          <i class="icon icon-card-discount"></i>
+                                          <div class="is-red-text">바로할인_선택유종 할인불가</div>
+                                        </small> -->
+                                      </li>
+                                      <li class="card-info-item">
+                                        <!--  알림 문구 노출 시 -->
+                                        <small class="is-red-text">
+                                          <i class="icon icon-card-credit"></i>
+                                          현대카드 (2026) 만료
+                                        </small>
+                                      </li>
+                                    </ul>
+                                    <div class="buttons">
+                                      <!-- <button  class="button is-medium is-gray">예약취소</button> -->
+                                      <button class="button is-medium is-gray" >삭제</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                          </div>
+                        </div>
+
+
+                    </div>
+                  </section>
+                </div>
+    <!-- // Contents -->
+  </div>
+
+
+
+<!-- Footer -->
+<footer id="footer">
+    <nav class="bottom-navbar">
+        <ul>
+            <li>
+                <a href="main.html" class="menu-home">
+                    <i class="icon-home"></i>
+                    <span class="menu-text">홈</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-gas">
+                    <i class="icon-gas"></i>
+                    <span class="menu-text">주유소</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-ev">
+                    <i class="icon-event"></i>
+                    <span class="menu-text">이벤트</span>
+                </a>
+            </li>
+            <li>
+                <!-- D: 클릭시 #gnb [is-active] 토글 / body [is-fixed] 토글 -->
+                <a href="#" class="menu-all">
+                    <i class="icon-menu"></i>
+                    <span class="menu-text">전체</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</footer>
+<!-- // Footer -->
+
+
+    </div>
+
+    
+</body>
+
+</html>

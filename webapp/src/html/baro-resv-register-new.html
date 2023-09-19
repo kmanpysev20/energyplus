@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">바로주유 예약</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container">
+            <!-- Contents -->
+            <div id="contents" class="container">
+                <div class="inner baro-resv-wrap">
+                  <div class="baro">
+                    <ul class="baro-list">
+
+                        <div class="baro-content">
+                            <!-- *** 화면 타이틀 영역 *** -->
+                            <div class="title-wrap">
+                              <div class="title-area">
+                                <h2 class="title is-2"><strong>예약 주유 리터</strong>를 입력해 주세요.</h2>
+                              </div>
+                              <p><strong class="txt-bold">주유하실 리터를 입력</strong>하면<br />금액이 자동 설정됩니다.</p>
+                            </div>
+                            <!--// *** 화면 타이틀 영역 *** -->
+                        
+                            <div class="is-border-rounded gs-point-area">
+                              <div>
+                                <span class="align-left">예상 주유 금액</span>
+                                <span><i class="icon-help"></i><span class="blind">도움말</span></span>
+                              </div>
+                              <p class="align-right price">
+                                <em class="is-family-secondary">999,000</em>원
+                              </p>
+                            </div>
+                            <dl>
+                              <dt>주유 리터</dt>
+                              <dd>
+                                <div class="input-area">
+                                  <div class="input-wrap mt--20">
+                                      <input type="text" class="input text-align-left input-border-bottom" placeholder="주유 리터를 직접 입력해주세요."/>
+                                  </div>
+                                  <div class="add-price-wrap baro-btn-wrap fourbtn">
+                                    <button type="button" class="button is-outline-is-small is-rounded">+ 1L</button>
+                                    <button type="button" class="button is-outline-is-small is-rounded">+ 10L</button>
+                                    <button type="button" class="button is-outline-is-small is-rounded">+ 50L</button>
+                                    <button type="button" class="button is-outline-is-small is-rounded">+ 100L</button>
+                                  </div>
+                                  <span class="sub-txt">주유 리터를 입력해 주세요.</span>
+                                </div>
+                              </dd>
+                            </dl>
+                          </div>
+
+                          <div class="baro-content">
+                            <!-- *** 화면 타이틀 영역, 숨김시 show를 hide로 변경 *** -->
+                            <div class="title-wrap show">
+                              <div class="title-area">
+                                <h2 class="title is-2"><strong>예약 주유소</strong>를 선택해 주세요.</h2>
+                              </div>
+                              <p><strong>찜한 단골 주유소</strong> 중 예약 가능한<br />주유소 목록이 표시됩니다.</p>
+                            </div>
+                            <!--// *** 화면 타이틀 영역 *** -->
+                            <div class="box-rez-subtitle">
+                              <!--***  class명 보임/안보임 = show/hide *** -->
+                              <span class="'item-subtitle show">주유소</span>                        
+                              <a class="link-underline-txt size-s"><strong>예약 가능한 단골주유소 확인 방법</strong></a>
+                              <span class="tooltip-dark">예약특가 적용중!</span>
+                            </div>
+                        
+                            <div class="list-rez-station-area">
+                              <ul class="list-rez-station">
+                                <li>
+                                    <!-- 비활성화 is-disabled 사용 -->
+                                    <div class="group-box-rez is-active">
+                                        <div class="box-rez-hd special">
+                                          <p class="box-rez-info">
+                                            <span class="name">서초꽃마을</span>
+                                            <time>06:00~00:30</time>
+                                          </p>
+                                          <div>
+                                            <small  class="cur-price">1,655원</small>
+                                            <!-- *** cur-price가 보이는 경우 p 태그에 class에 is-text-green 추가해주세요 *** -->
+                                            <p class="price is-text-green">
+                                              <em class="is-family-secondary">1,565</em>
+                                              <span class="won">원</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="box-rez-bt">
+                                          <div class="hash-tag-area">
+                                            <span class="hash-tag">셀프</span>
+                                            <span class="hash-tag">세차</span>
+                                            <span class="hash-tag">경정비</span>
+                                            <span class="hash-tag">편의점</span>
+                                            <span class="hash-tag">EV충전소</span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <!-- 비활성화 is-disabled 사용 -->
+                                    <div class="group-box-rez">
+                                        <div class="box-rez-hd">
+                                          <p class="box-rez-info">
+                                            <span class="name">은마주유소</span>
+                                            <time>06:00~00:30</time>
+                                          </p>
+                                          <div>
+                                            <small  class="cur-price">1,655원</small>
+                                            <!-- *** cur-price가 보이는 경우 p 태그에 class에 is-text-green 추가해주세요 *** -->
+                                            <p class="price is-text-green">
+                                              <em class="is-family-secondary">1,565</em>
+                                              <span class="won">원</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>                                
+                                <li>
+                                    <!-- 비활성화 is-disabled 사용 -->
+                                    <div class="group-box-rez is-disabled">
+                                        <div class="box-rez-hd">
+                                          <p class="box-rez-info">
+                                            <span class="name">말죽거리주유소</span>
+                                          </p>
+                                          <div>
+                                            <small  class="cur-price">1,655원</small>
+                                            <!-- *** cur-price가 보이는 경우 p 태그에 class에 is-text-green 추가해주세요 *** -->
+                                            <p class="price is-text-green">
+                                              <em class="is-family-secondary">1,565</em>
+                                              <span class="won">원</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                  <div class="group-box-rez is-add">
+                                    <div class="box-rez-hd special">
+                                      <i class="icon-like"></i>
+                                      <p>
+                                        예약가능한<br />
+                                        단골 주유소를<br />
+                                        더 추가할 수 있습니다.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                              <div class="box-button">
+                                <button class="button is-text more" >더보기</button>
+                              </div>
+                            </div>
+                          </div>
+          
+                      <div class="is-button-fixed">
+                        <div class="inner">
+                          <div class="buttons">
+                            <button class="button is-fullwidth is-dark">확인</button>
+                          </div>
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            <!-- // Contents -->
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

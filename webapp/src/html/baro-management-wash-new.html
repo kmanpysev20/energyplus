@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">바로세차 관리</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container" class="baro-management-wrap" >
+
+            <div v-if="!isAvailResv" id="contents" class="container full-height wash-new">
+                <div class="is-padding-top inner padding-bottom">
+                  <div class="box-point-list">
+                    <button type="button" class="btn-enrollment-card" @click="goRegisterPage"><i class="ico-plus"></i>바로세차 등록</button>
+                  </div>
+                  <div class="level txt-enrollment-desc">
+                    <p>바로세차는 <strong>최대 5개</strong>까지 등록할 수 있습니다.</p>
+                  </div>
+                  <!-- 미등록 시 -->
+                  <!-- <div class="no-data">
+                    <p>바로세차를 등록해주세요.</p>
+                  </div> -->
+                  <div v-else class="card-area">
+                    <div class="list-group pb60">
+                      
+                        <div class="card-list-wrap">
+                            <div class="card pattern carwash">
+                              <div class="card-content">
+                                <div class="nick">
+                                  <span class="name">내차 씽씽</span>
+                                  <button class="button-fav button-fav-on">
+                                    <span class="blind">대표패턴</span>
+                                  </button>
+                                </div>
+                                <div class="info-area">
+                                  <span class="oil">세차</span>
+                                  <span>
+                                    <span class="price">1,000</span>
+                                    <span class="oil is-normal-text">원</span>
+                                    ~
+                                    <span class="price">5,000</span>
+                                    <span class="oil is-normal-text">원</span>
+                                  </span>
+                                  <!-- button draggable -->
+                                  <button class="btn-draggable">
+                                    <span class="blind">이동하기</span>
+                                  </button>
+                                </div>
+                                <ul class="card-info-box">
+                                  <li class="card-info-item">
+                                    <small><i class="icon icon-card-point"></i>포인트 <span>사용하지 않음</span></small>
+                                  </li>
+                                  <li class="card-info-item">
+                                    <small><i class="icon icon-card-coupon"></i>쿠폰 <span>기간임박순</span></small>
+                                  </li>
+                                  <!--
+                                  <li class="card-info-item">
+                                    <small> <i class="icon icon-card-discount"></i>보너스카드</small>
+                                  </li>-->
+                                  <li class="card-info-item">
+                                    <small class="creditcard-name">
+                                      <!-- *** npay 사용 시 class명 icon-card-credit을 icon-card-credit-npay로 변경해주세요 *** -->
+                                      <i class="icon icon-card-credit-npay"></i>
+                                      현대카드 <span>(2023)</span>
+                                      <small>
+                                        사용기간 <em>~ 2024-12-30</em>
+                                      </small>
+                                    </small>
+                                  </li>
+                                  <!-- 카드 안내 문구 노출 시 -->
+                                  <!-- <li class="card-info-item">
+                                    <small class="creditcard-name">
+                                      <i class="icon icon-card-credit"></i>
+                                      <div class="card-expired">결제카드 유효기간이 만료되었습니다.</div>
+                                    </small>
+                                  </li> -->
+                                </ul>
+                                <div class="buttons">
+                                  <button class="button is-half is-medium is-gray">삭제</button>
+                                  <button class="button is-half is-medium is-gray">패턴수정</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-list-wrap">
+                            <div class="card pattern carwash">
+                              <div class="card-content">
+                                <div class="nick">
+                                  <span class="name">내차 씽씽</span>
+                                  <button class="button-fav button-fav-off">
+                                    <span class="blind">대표패턴</span>
+                                  </button>
+                                </div>
+                                <div class="info-area">
+                                  <span class="oil">세차</span>
+                                  <span>
+                                    <span class="price">1,000</span>
+                                    <span class="oil is-normal-text">원</span>
+                                    ~
+                                    <span class="price">5,000</span>
+                                    <span class="oil is-normal-text">원</span>
+                                  </span>
+                                  <!-- button draggable -->
+                                  <button class="btn-draggable">
+                                    <span class="blind">이동하기</span>
+                                  </button>
+                                </div>
+                                <ul class="card-info-box">
+                                  <li class="card-info-item">
+                                    <small><i class="icon icon-card-point"></i>포인트 <span>사용하지 않음</span></small>
+                                  </li>
+                                  <li class="card-info-item">
+                                    <small><i class="icon icon-card-coupon"></i>쿠폰 <span>기간임박순</span></small>
+                                  </li>
+                                  <!--
+                                  <li class="card-info-item">
+                                    <small> <i class="icon icon-card-discount"></i>보너스카드</small>
+                                  </li>-->
+                                  <li class="card-info-item">
+                                    <small class="creditcard-name">
+                                      <i class="icon icon-card-credit"></i>
+                                      <div class="card-expired">결제카드 유효기간이 만료되었습니다.</div>
+                                    </small>
+                                  </li>
+                                </ul>
+                                <div class="buttons">
+                                  <button class="button is-half is-medium is-gray">삭제</button>
+                                  <button class="button is-half is-medium is-gray">패턴수정</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+    <!-- // Contents -->
+  </div>
+
+
+
+<!-- Footer -->
+<footer id="footer">
+    <nav class="bottom-navbar">
+        <ul>
+            <li>
+                <a href="main.html" class="menu-home">
+                    <i class="icon-home"></i>
+                    <span class="menu-text">홈</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-gas">
+                    <i class="icon-gas"></i>
+                    <span class="menu-text">주유소</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-ev">
+                    <i class="icon-event"></i>
+                    <span class="menu-text">이벤트</span>
+                </a>
+            </li>
+            <li>
+                <!-- D: 클릭시 #gnb [is-active] 토글 / body [is-fixed] 토글 -->
+                <a href="#" class="menu-all">
+                    <i class="icon-menu"></i>
+                    <span class="menu-text">전체</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</footer>
+<!-- // Footer -->
+
+
+    </div>
+
+    
+</body>
+
+</html>

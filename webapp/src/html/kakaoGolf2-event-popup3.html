@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+@@include('./include/head.html')
+
+<body>
+  @@include('./include/skip_navi.html')
+
+  <div id="container">
+    <!-- Contents -->
+    <div class="container kakao-event-wrap">
+      <!-- intro -->
+      <section class="kakao-section">
+        <div class="inner kakao-inner">
+          <div class="kakao-imgbox">
+            <img class="kakao-intro" src="./images/kakao-intro.png" alt="이벤트 intro" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Main -->
+      <section class="kakao-section">
+        <div class="inner kakao-inner">
+          <div class="kakao-imgbox bg">
+            <!-- kakao-event 부분에 close 추가 시 display : none -->
+            <img class="kakao-event" src="./images/kakao-event.png" alt="이벤트"/>
+            <!-- kakao-soldout 부분에 open 추가 시 display : block -->
+            <img class="kakao-soldout" src="./images/kakao-soldout.png" alt="이벤트"/>
+            <!-- img-wrap 부분에 close 추가 시 display : none -->
+            <div class="img-wrap">
+              <img class="kakao-bottom" src="./images/kakao-bottom.png" alt="roulette-bottom">
+              <img class="kakao-plate" src="./images/kakao-plate.png" alt="roulette-plate">
+              <div class="kakao-btn">
+                <span class="blind">룰렛 버튼</span>
+              </div>
+              <img class="kakao-pin" src="./images/kakao-pin.png" alt="roulette-pin">
+              <a href="javascript:vold(0);" class="kakao-coupon-btn"><img src="./images/kakao-coupon-btn.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- noti -->
+      <section class="kakao-section">
+        <div class="inner kakao-inner">
+          <div class="kakao-imgbox">
+            <img class="kakao-info" src="./images/kakao-info.png" alt="noti"/>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <!-- // Contents -->
+  </div>
+
+    <!-- bottom 팝업 -->
+    @@include('./include/bottom-sheet-event-kakaoGolf2-popup3.html')
+
+</body>
+
+  <!--확인 버튼 클릭 시 팝업 닫힘 -->
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    $(function () {
+        $('.popup-close').on('click', function () {
+            $('.modal').removeClass('is-active');
+        });
+    });
+  </script>
+
+</html>

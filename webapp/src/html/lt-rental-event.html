@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  @@include('./include/head.html')
+
+  <body>
+    @@include('./include/skip_navi.html')
+
+    <div id="container">
+      <!-- Contents -->
+      <div class="container ltrental-event-wrap">
+        <!-- main -->
+        <section class="ltrental-section">
+          <div class="inner ltrental-inner">
+            <div class="ltrental-imgbox point">
+              <img src="./images/ltrental-event.png" alt="이벤트 이미지" />
+              <div class="input-wrap">
+                <input class="input" onchange="input()" type="text" placeholder="쿠폰코드를 입력해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '쿠폰코드를 입력해주세요.'" />
+                <button class="del-btn" onclick="clearInput(this)"></button>
+              </div>
+              <div class="txt-wrap">
+                <span>*</span><p class="txt">&nbsp;발급일(포함)로부터 14일 이내 / 3만원 이상 주유 시</p>
+              </div>
+              <a href="javascript:vold(0);" class="ltrental-give-btn"><img src="./images/ltrental-give-btn.png" alt="버튼"/></a>
+            </div>
+          </div>
+        </section>
+        <!-- noti -->
+        <section class="ltrental-section">
+          <div class="inner ltrental-inner">
+            <div class="ltrental-imgbox">
+              <img src="./images/ltrental-noti.png" alt="이벤트 이미지" />
+              <a href="javascript:vold(0);" class="ltrental-baro-btn"><img src="./images/ltrental-baro-btn.png" alt="버튼"/></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- // Contents -->
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+  
+    // input 'X' 버튼 클릭 시 초기화 이벤트
+    function clearInput(e) {
+      e.parentNode.querySelector(".input").value = '';
+    }
+  </script>
+</html>

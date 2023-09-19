@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="980.677" height="270" viewBox="0 0 980.677 270">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_23467" data-name="사각형 23467" width="980.677" height="270" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="패스_35020" data-name="패스 35020" d="M69.823,0V269.538H393.839L519.017,144.36a13.565,13.565,0,0,0,0-19.182L393.847,0Z" transform="translate(-69.823)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="패스_35021" data-name="패스 35021" d="M59.861,0V269.538H383.877L509.055,144.36a13.565,13.565,0,0,0,0-19.182L383.877,0Z" transform="translate(-59.861)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="패스_35022" data-name="패스 35022" d="M49.857,0V269.538H373.873L499.051,144.36a13.565,13.565,0,0,0,0-19.182L373.881,0Z" transform="translate(-49.857)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="패스_35023" data-name="패스 35023" d="M39.822,0V269.538H363.846L489.024,144.36a13.565,13.565,0,0,0,0-19.182L363.853,0Z" transform="translate(-39.822)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-6">
+      <path id="패스_35024" data-name="패스 35024" d="M29.868,0l.008,269.538H353.892L479.07,144.36a13.565,13.565,0,0,0,0-19.182L353.9,0Z" transform="translate(-29.868)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-7">
+      <path id="패스_35025" data-name="패스 35025" d="M19.915,0V269.538H343.931L469.109,144.36a13.566,13.566,0,0,0,0-19.182L343.939,0Z" transform="translate(-19.915)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-8">
+      <path id="패스_35026" data-name="패스 35026" d="M9.954.061V269.6H333.978L459.156,144.421a13.565,13.565,0,0,0,0-19.182L333.978.061Z" transform="translate(-9.954 -0.061)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-9">
+      <path id="패스_35027" data-name="패스 35027" d="M0,.061V269.6H324.024L449.2,144.421a13.565,13.565,0,0,0,0-19.182L324.024.061Z" transform="translate(0 -0.061)" fill="none"/>
+    </clipPath>
+    <image id="image" width="468.406" height="271.978" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAkCAYAAADRjIm5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABySURBVGhD7c/hCYAgFABhfVYu1X4t2SxZgkTRAsHdB6JPf8jldd9a+pmSo9U89XXUPB81+t7n69zv4vF2z+P8ndsS77eSosX4C8dwGsNpDKcxnMZwGsNpDKcxnMZwGsNpDKcxnMZwGsNpDKcxnMZwlpROI1wc578UYhgAAAAASUVORK5CYII="/>
+  </defs>
+  <g id="패턴" opacity="0.3" style="mix-blend-mode: lighten;isolation: isolate">
+    <g id="그룹_35202" data-name="그룹 35202" clip-path="url(#clip-path)">
+      <g id="그룹_35187" data-name="그룹 35187" transform="translate(527.509)">
+        <g id="그룹_35186" data-name="그룹 35186" clip-path="url(#clip-path-2)">
+          <image id="사각형_23459" data-name="사각형 23459" width="460.851" height="271.978" transform="translate(-6.218 -1.978)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAkCAYAAAA6uzK6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABySURBVGhD7c+BCYAgEEBRtcSl2q8lmyXrRIiaIPj/geR1Qfy8HXtPP7Pk0lte45wt17OVeMZ83+PdmOvcj/nZjfm1+3xbe5n/QTGawmgKoymMpjCawmgKoymMpjCawmgKoymMpjCawmgKoymMpjCaIaULM0cb5aYoWhIAAAAASUVORK5CYII="/>
+        </g>
+      </g>
+      <g id="그룹_35189" data-name="그룹 35189" transform="translate(452.246)">
+        <g id="그룹_35188" data-name="그룹 35188" clip-path="url(#clip-path-3)">
+          <use id="사각형_23460" data-name="사각형 23460" transform="translate(-6.505 -1.978)" xlink:href="#image"/>
+        </g>
+      </g>
+      <g id="그룹_35191" data-name="그룹 35191" transform="translate(376.667)">
+        <g id="그룹_35190" data-name="그룹 35190" clip-path="url(#clip-path-4)">
+          <use id="사각형_23461" data-name="사각형 23461" transform="translate(-6.475 -1.978)" xlink:href="#image"/>
+        </g>
+      </g>
+      <g id="그룹_35193" data-name="그룹 35193" transform="translate(300.853)">
+        <g id="그룹_35192" data-name="그룹 35192" clip-path="url(#clip-path-5)">
+          <image id="사각형_23462" data-name="사각형 23462" width="460.851" height="271.978" transform="translate(-6.21 -1.978)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAkCAYAAAA6uzK6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVGhD7c+BCYAgFABRDcWGar+WbBbNTMgRgrsXkj+LuHhcZws/E/tVYqpl6yvmtuz7SnPOdX/uY+7Px/l4py379/z7dszb/A+K0RRGUxhNYTSF0RRGUxhNYTSF0RRGUxhNYTSF0RRGUxhNYTSF0Qwh3O/0GuK4N20gAAAAAElFTkSuQmCC"/>
+        </g>
+      </g>
+      <g id="그룹_35195" data-name="그룹 35195" transform="translate(225.651)">
+        <g id="그룹_35194" data-name="그룹 35194" clip-path="url(#clip-path-6)">
+          <image id="사각형_23463" data-name="사각형 23463" width="468.406" height="271.978" transform="translate(-6.558 -1.978)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAkCAYAAADRjIm5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB6SURBVGhD7c/rCYQwEADhbIzEouzPJq3FuOZ+3HEVCDMfBHd9IBP7eYzyMpGnx3r12q4ebfzMedbc8zr3vD+fP/uc57595zz5/t+3S9RRP7/iMZzGcBrDaQynMZzGcBrDaQynMZzGcBrDaQynMZzGcBrDaQynMZyllBu0ZxvnU3+uggAAAABJRU5ErkJggg=="/>
+        </g>
+      </g>
+      <g id="그룹_35197" data-name="그룹 35197" transform="translate(150.457)">
+        <g id="그룹_35196" data-name="그룹 35196" clip-path="url(#clip-path-7)">
+          <image id="사각형_23464" data-name="사각형 23464" width="468.406" height="271.978" transform="translate(-6.913 -1.978)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAkCAYAAADRjIm5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB0SURBVGhD7c/RDYAgDABRSjA6lPu5pLOIWowfTmBy975ahZCLdd96+aE5pmOu7Vii9Zyj5X7N1/6Zc88zzz7ujv2d7+/5v0Xt9XkHx3Aaw2kMpzGcxnAaw2kMpzGcxnAaw2kMpzGcxnAaw2kMpzGcxnCWUk60Pxvn3mdaYwAAAABJRU5ErkJggg=="/>
+        </g>
+      </g>
+      <g id="그룹_35199" data-name="그룹 35199" transform="translate(75.202 0.461)">
+        <g id="그룹_35198" data-name="그룹 35198" clip-path="url(#clip-path-8)">
+          <image id="사각형_23465" data-name="사각형 23465" width="468.406" height="271.978" transform="translate(-7.207 -2.439)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAAkCAYAAADRjIm5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVGhD7c/BDYAgEABBIBAsyv5s0lpAQeLHBkx258NdhJiN+3n08EM15lZTaffZ5xzvOT3zNub5fezvPO6su2P/vF17aTmmntZ/cAynMZzGcBrDaQynMZzGcBrDaQynMZzGcBrDaQynMZzGcBrDaQxnCeECtAcb58OLT94AAAAASUVORK5CYII="/>
+        </g>
+      </g>
+      <g id="그룹_35201" data-name="그룹 35201" transform="translate(0 0.461)">
+        <g id="그룹_35200" data-name="그룹 35200" clip-path="url(#clip-path-9)">
+          <image id="사각형_23466" data-name="사각형 23466" width="460.851" height="271.978" transform="translate(0 -2.439)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAkCAYAAAA6uzK6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1SURBVGhD7c+NCYAgFABhNcOGar+WbJZMpb8RgrsPIp9ZcXHdtxp+psR8lDTXcR/X3OZ8zW09nvf5Wff9utzn09h/3/98K8eppus/KEZTGE1hNIXRFEZTGE1hNIXRFEZTGE1hNIXRFEZTGE1hNIXRFEYzhHACeM4b595HXqcAAAAASUVORK5CYII="/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

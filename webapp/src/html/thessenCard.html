@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  @@include('./include/head.html')
+
+  <body>
+    @@include('./include/skip_navi.html')
+
+    <div id="container">
+      <!-- Contents -->
+      <div class="container thessenCard-event-wrap">
+        <!-- main -->
+        <section class="thessenCard-section">
+          <div class="inner thessenCard-inner">
+            <div class="thessenCard-imgbox point">
+              <img src="./images/thessenCard-main.png" alt="이벤트 이미지" />
+            </div>
+          </div>
+        </section>
+        <!-- sub -->
+        <section class="thessenCard-section">
+          <div class="inner thessenCard-inner">
+            <div class="thessenCard-imgbox point">
+              <img src="./images/thessenCard-sub.png" alt="이벤트 이미지" />
+               <div class="input-wrap">
+                <input class="input" type="text" placeholder="쿠폰코드를 입력해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '쿠폰코드를 입력해주세요.'" />
+                <button class="del-btn" onclick="clearInput(this)"></button>
+              </div>
+              <a href="javascript:vold(0);" class="thessenCard-give-btn"><img src="./images/thessenCard-give-btn.png" alt="버튼"/></a>
+            </div>
+          </div>
+        </section>
+        <!-- noti -->
+        <section class="thessenCard-section">
+          <div class="inner thessenCard-inner">
+            <div class="thessenCard-imgbox point">
+                <img src="./images/thessenCard-noti.png" alt="이벤트 이미지" />
+              <a href="javascript:vold(0);" class="thessenCard-baro-btn"><img src="./images/thessenCard-baro-btn.png" alt="버튼"/></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- // Contents -->
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    // input 'X' 버튼 클릭 시 초기화 이벤트
+    function clearInput(e) {
+      e.parentNode.querySelector(".input").value = '';
+    }
+
+  </script>
+</html>

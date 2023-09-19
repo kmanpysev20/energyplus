@@ -1,0 +1,70 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+
+  <!--  Bottom Sheet -->
+  <div class="bottom-sheet is-bottom-fixed is-large">
+    <div class="bottom-sheet-header">
+      <h2 class="title is-3 has-text-centered">할부 선택</h2>
+      <button class="btn-close"><span class="blind">닫기</span></button>
+    </div>
+
+    <div class="bottom-sheet-body">
+      <div class="card-monthly-wrap">
+        <div class="section-point-area has-text-centered">
+          <small
+            ><i class="icon-noti"></i>할부 선택 기준은 카드사를 통해
+            확인해주세요.</small
+          >
+        </div>
+        <div class="inner">
+          <ul>
+            <li>
+              <div class="box-credit-card is-active">
+                <h4 class="title is-5">일시불</h4>
+              </div>
+            </li>
+            <li>
+              <div class="box-credit-card">
+                <h4 class="title is-5">2개월</h4>
+              </div>
+            </li>
+            <li>
+              <div class="box-credit-card">
+                <h4 class="title is-5">3개월</h4>
+              </div>
+            </li>
+            <li>
+              <div class="box-credit-card">
+                <h4 class="title is-5">4개월</h4>
+              </div>
+            </li>
+            <li>
+              <div class="box-credit-card">
+                <h4 class="title is-5">5개월</h4>
+              </div>
+            </li>
+            <li>
+              <div class="box-credit-card">
+                <h4 class="title is-5">6개월</h4>
+              </div>
+            </li>
+          </ul>
+          <!-- 하단버튼 -->
+          <div class="is-button-fixed">
+            <div class="inner">
+              <div class="buttons is-centered">
+                <button
+                  type="button"
+                  class="button is-fullwidth is-dark"
+                  @click="() => clickConfirm()"
+                >
+                  확인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Energy Plus 기능개선</title>
+
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="css/ep-style.css">
+    <!-- // Library CSS -->
+
+    <!-- Library JS -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script> <!-- vue CDN -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> <!-- buefy CDN -->
+    <script src="lib/swiper/swiper-bundle.min.js"></script>
+
+    <!-- // Library JS -->
+    <script src="js/ui.js"></script>
+</head>
+
+<body>
+    <div class="skipNavi">
+        <a href="#">본문 바로가기</a>
+    </div>
+    <div id="wrap" role="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="is-back">
+                    <i class="icon-arrow-left"></i>
+                    <span class="blind">이전</span>
+                </a>
+                <div class="has-text-centered">
+                    <h2 class="title is-3">바로주유 예약</h2>
+                </div>
+            </div>
+        </header>
+        <!-- // Header -->
+
+        <div id="container">
+            <!-- Contents -->
+            <div id="contents" class="container type-2 complete-wrap baro-resv-wrap">
+                <div class="inner top-bg-box">
+                  <div>
+                    <div class="title-area">
+                      <h3 class="title is-2">
+                        설정한 바로주유 패턴/금액으로
+                        <strong>예약하시겠습니까?</strong>
+                      </h3>
+                      <!-- 배너 -->
+                      <div class="banner-complete hide">
+                        <span class="twinkle-a">이미지</span>
+                        <span class="twinkle-b">이미지</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inner is-padding-top">
+                  <div class="is-fullheight">
+                    <div class="card-area card-wrap">
+                      <div class="card reservation special">
+                        <span class="tooltip-dark reservation-tooltip-dark">예약특가 적용중!</span>
+                        <div class="card-content">
+                          <div class="reservation-period">
+                            <p class="price-area">
+                              <strong class="price is-family-secondary"> 15,650</strong>
+                              원
+                              <span class="liter">(10리터)</span>
+                            </p>
+                            <p class="sub-desc">
+                              <small class="is-bold-text">7일간 사용 가능</small>
+                              <small class="is-gray-text"><em class="is-medium-text">2023-12-31</em>까지</small>
+                            </p>
+                          </div>
+                          <div class="reservation-info">
+                            <p>
+                              <span>서초꽃마을</span>
+                            </p>
+                            <p class="is-medium-text">
+                              휘발유 (<strong class="is-family-secondary is-bold-text">1,565</strong>원/리터)
+                            </p>
+                          </div>
+                          <ul class="card-info-box">
+                            <li class="card-info-item">
+                              <small><i class="icon icon-card-point"></i>포인트 <span>사용하지 않음</span></small>
+                              <small>
+                                <i class="icon icon-card-coupon"></i>쿠폰 <span>사용하지 않음</span>
+                              </small>
+                            </li>
+                            <li class="card-info-item">
+                              <small><i class="icon icon-card-discount"> </i> 보너스카드</small>
+                            </li>
+                            <li class="card-info-item">
+                              <small class="creditcard-name">
+                                <!-- npay 사용 시 icon-card-credit-npay로 변경 -->
+                                <i class="icon icon-card-credit"></i>
+                                현대카드 (2026)
+                              </small>
+                              <small class="is-gray-text">사용기간 <em> ~2024-12-31</em></small>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- *** 유의사항 , 하단버튼 ***-->
+                    <div class="bottom-noti-wrap">
+                      <div class="inner">
+                        <!-- 유의사항 -->
+                        <div class="box-bottom-noti box-bottom-type">
+                          <p class="title is-5 title-noti">유의사항</p>
+                          <ul class="list-noti-area">
+                            <li class="item-txt-noti">- 설정된 금액보다 적게 주유할 경우 쿠폰/포인트 사용이 불가합니다.</li>
+                          </ul>
+                          <!-- button -->
+                          <div class="buttons is-bottom-type">
+                            <button class="button is-half is-outline">취소</button>
+                            <button class="button is-half is-dark">예약완료</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- // Contents -->
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

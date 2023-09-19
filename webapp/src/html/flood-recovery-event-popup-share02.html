@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  @@include('./include/head.html')
+
+  <body>
+    @@include('./include/skip_navi.html')
+
+    <div id="container">
+      <!-- Contents -->
+      <div class="container fr-event-wrap">
+        <!-- Main -->
+        <section class="fr-section">
+          <div class="inner fr-inner">
+            <div class="fr-imgbox">
+              <img src="./images/fr-intro.png" alt="이벤트 이미지" />
+            </div>
+          </div>
+        </section>
+        <!-- event1 -->
+        <section class="fr-section">
+          <div class="inner fr-inner">
+            <div class="fr-imgbox point">
+              <img src="./images/fr-event1.png" alt="이벤트 이미지" />
+              <img
+                id="frpo-btn"
+                class="fr-1po"
+                src="./images/fr-1po.png"
+                alt="이벤트 이미지"
+              />
+              <img
+                id="frpo-btn"
+                class="fr-10po"
+                src="./images/fr-10po.png"
+                alt="이벤트 이미지"
+              />
+              <img
+                id="frpo-btn"
+                class="fr-100po"
+                src="./images/fr-100po.png"
+                alt="이벤트 이미지"
+              />
+              <img
+                id="frpo-btn"
+                class="fr-1000po"
+                src="./images/fr-1000po.png"
+                alt="이벤트 이미지"
+              />
+              <div class="input-wrap">
+                <input class="input" type="number" value="0" />
+                <button class="del-btn" onclick="clearInput(this)"></button>
+                <div class="blind-wrap">
+                  <p>기부 포인트를 입력해 주세요.</p>
+                </div>
+              </div>
+              <div class="myPoint-wrap">
+                <p class="txt">나의 기부 가능 포인트 :</p>
+                <p class="point">&nbsp;10,000,000</p>
+                <span>P</span>
+              </div>
+              <a href="javascript:vold(0);" class="fr-give-btn"
+                ><img src="./images/fr-give-btn.png" alt="버튼"
+              /></a>
+              <div class="give-txt">나의 기부 인증서 보기 ></div>
+            </div>
+          </div>
+        </section>
+        <!-- event2 -->
+        <section class="fr-section">
+          <div class="inner fr-inner">
+            <div class="fr-imgbox">
+              <img src="./images/fr-event2.png" alt="이벤트 이미지" />
+              <a href="javascript:vold(0);" class="fr-insta-btn"
+                ><img src="./images/fr-insta-btn.png" alt="버튼"
+              /></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- // Contents -->
+    </div>
+
+    <!-- bottom 팝업 -->
+    @@include('./include/bottom-sheet-event-fr-popup2.html')
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    // 팝업 닫기 이벤트
+    $(function close() {
+        $('.popup-close').on('click', function () {
+            $('.modal').removeClass('is-active').css('display','none');
+        });
+    });
+
+    // placeholder 기능
+    $(".input").on("click", function () {
+      $(".blind-wrap").css("display", "none");
+    });
+    $(".blind-wrap").on("click", function () {
+      $(".blind-wrap").css("display", "none");
+    });
+    $(".del-btn").on("click", function () {
+      $(".blind-wrap").css("display", "flex");
+    });
+
+    // point 버튼 이벤트
+    $(".point #frpo-btn").on({
+      click: function () {
+        var count = $(this).parent(".fr-imgbox").find(".input");
+        var now = parseInt(count.val());
+        var min = 0;
+        var max = 10000000;
+        var num = now;
+
+        if ($(this).hasClass("fr-1po")) {
+          var type = "fr-1po";
+        } else if ($(this).hasClass("fr-10po")) {
+          var type = "fr-10po";
+        } else if ($(this).hasClass("fr-100po")) {
+          var type = "fr-100po";
+        } else if ($(this).hasClass("fr-1000po")) {
+          var type = "fr-1000po";
+        }
+        if (type == "fr-1po") {
+          if (now < max) {
+            num = now + 1;
+            $(".blind-wrap").css("display", "none");
+          }
+        } else if (type == "fr-10po") {
+          if (now < max) {
+            num = now + 10;
+            $(".blind-wrap").css("display", "none");
+          }
+        } else if (type == "fr-100po") {
+          if (now < max) {
+            num = now + 100;
+            $(".blind-wrap").css("display", "none");
+          }
+        } else if (type == "fr-1000po") {
+          if (now < max) {
+            num = now + 1000;
+            $(".blind-wrap").css("display", "none");
+          }
+        }
+        if (num != now) {
+          count.val(num);
+        }
+      },
+    });
+    // input 'X' 버튼 클릭 시 초기화 이벤트
+    function clearInput(e) {
+      e.parentNode.querySelector(".input").value = 0;
+    }
+  </script>
+</html>

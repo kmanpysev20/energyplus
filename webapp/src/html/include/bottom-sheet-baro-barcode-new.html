@@ -1,0 +1,199 @@
+ <!-- bottom sheet -->
+        <div class="modal is-active">
+            <div class="modal-background"></div>
+
+            <!--  Bottom Sheet -->
+            <div class="bottom-sheet is-bottom-fixed is-large">
+                <div class="bottom-sheet-header">
+                    <!-- 바로주유, 바로세차에서 동일하게 사용됨, 해당 컨텐츠 노출 -->
+                    <!-- 바로주유 & 바로주유 예약 -->
+                    <h2 class="title is-5 title-price">
+                        휘발유
+                        <!-- 바로주유 시 사용, 사용시 주석 해제  -->
+                        <strong>
+                            <em class="is-family-secondary">50,000</em>
+                        <span>원</span>
+                        </strong>
+                        <!-- 바로주유 예약 시 사용 -->
+                        <!-- <strong><em class="is-family-secondary">100</em>
+                        <span>리터</span>
+                        </strong> -->
+                    </h2>
+                    <!-- 바로세차 시 사용, 사용시 주석 해제 -->
+                    <!-- <h2 class="title is-5 title-price">
+                        <strong><em class="is-family-secondary">내차씽씽</em></strong>
+                    </h2> -->
+                    <button class="btn-close"><span class="blind">닫기</span></button>
+                </div>
+
+                <div class="bottom-sheet-body">
+
+                    <!-- 바로주유, 바로세차에서 동일하게 사용됨, 해당 컨텐츠 노출 -->
+                    <div class="inner modal-barcode-wrap">
+                        <div class="bonus-coupon-area type02">
+                          <span>
+                            <div class="is-align-right">
+                              <div class="pin-no-wrap">
+                                <div class="nfcset-item">
+                                  <span class="icon-nfc" aria-label="nfc설정"></span>
+                                  <label class="switch is-rounded">
+                                    <input  type="checkbox"/>
+                                    <span class="check"></span>
+                                  </label>
+                                </div>
+                                <div></div>
+                                <div>
+                                  <button  type="button" class="button is-small link-arrow-right btn-pin-view"">
+                                    주유번호 보기
+                                  </button>
+                                  <!-- 주유번호 보기 클릭 시 번호 보임, 사용시 span 주석 해제 -->
+                                  <!-- <span class="title is-3">주유번호</span>
+                                  <span class="title is-3 is-primary-text3">000 123</span> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="barcode-area">
+                                <div><canvas class="vue-barcode-element" width="310" height="120"></canvas></div>
+                              <p class="barcode-num">0000 - 0000 - 0000 - 0000 - 0000</p>
+                              <p class="timer">
+                                남은시간<span class="is-red-text">02:59</span>
+                              </p>
+                            </div>
+                          </span>
+                          
+                          <!-- 바코드 다시 실행, 사용시 span 주석 해제 -->
+                          <!-- <span>
+                            <div class="section-retry-area">
+                              <div class="box-retry">
+                                <button class="btn-refresh">다시실행</button>
+                              </div>
+                              <p class="has-text-centered">
+                                사용 가능 시간이 지났습니다.<br />
+                                다시 실행하시겠습니까?
+                              </p>
+                            </div>
+                          </span> -->
+                          <!-- *** 바로주유 - 안내문구 *** -->
+                          <div class="section-point-area has-text-centered">
+                            <small><i class="icon-noti"></i>설정한 금액보다 적게 주유된 경우, 쿠폰/포인트 사용이<br>불가하며, 결제 금액은 상이할 수 있습니다.</small>
+                            <small class="point-txt"><i class="icon-noti"></i>
+                                설정한 금액보다 적게 주유된 경우, 바로할인이 불가<br>하거나 일부만 할인될 수 있으며 할인 적용이 이루어지지<br>않은 경우, 주유소 직원을 통해 취소 후 재결제를
+                                요청하여<br>주시기 바랍니다.
+                              </small>
+                          </div>
+                          <!-- *** 바로세차 시 사용 - 안내문구, 사용시 div 주석 해제 *** -->
+                          <!-- <div  class="section-point-area has-text-centered">
+                            <small><i class="icon-noti"></i>쿠폰/포인트는 바로세차 결제 시 적용됩니다.</small>
+                            <small class="point-txt">
+                              <i class="icon-noti"></i>
+                              쿠폰/포인트 사용 금액보다 바로세차 결제 금액이 적은 경우 할인이 적용되지 않을 수 있습니다.
+                            </small>
+                          </div> -->
+                
+                          <div class="section-point-area has-text-centered">
+                            <ul class="list-my-discount">
+                              <li>
+                                <span>쿠폰할인</span>
+                                <span>
+                                  <strong class="is-family-secondary">자동적용</strong>
+                                </span>
+                              </li>
+                              <li>
+                                <span>GS&amp;포인트 사용</span>
+                                <span>
+                                  <strong class="is-family-secondary">1,000P</strong>
+                                </span>
+                              </li>
+                              <li>
+                                <span>바로할인카드</span>
+                                <span>
+                                  <strong class="is-family-secondary">휘발유 1리터 당 20원 할인</strong>
+                                  <small  class="mblock is-gray-text is-align-right">(잔여한도 999,000원)</small>
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- *** 바로주유 - 사용자 가이드 영역 *** -->                   
+                        <div  class="user-guide-area">
+                            <!-- Tab은 휘발유, 고급휘발유, 경유에서만 사용 -->
+                            <div class="tab-area b-tabs">
+                                <nav class="tabs">
+                                <ul>
+                                    <li class="guide-tab-1 is-active">
+                                    <a href="#">
+                                        <span>셀프주유소 사용안내</span>
+                                    </a>
+                                    </li>
+                                    <li class="guide-tab-2">
+                                    <a href="#">
+                                        <span>일반주유소 사용안내</span>
+                                    </a>
+                                    </li>
+                                </ul>
+                                </nav>
+                            </div>
+                            <!-- 휘발유, 고급휘발유, 경유일 경우 문구 -->
+                            <div class="contents-section">
+                                <div class="contents-self-area show">
+                                <p class="has-text-centered">
+                                    <strong class="is-bold-text">주유기에 바코드를 스캔 후 주유해 주세요.</strong><br />
+                                    스캔이 어려울 경우 주유번호 6자리를 입력해 주세요.
+                                </p>
+                                <div class="user-guide-img-area">
+                                    <img v-server-image src="/images/img-user-guide-self.png" alt="셀프주유소 사용안내 이미지" />
+                                </div>
+                                </div>
+                                <div class="contents-general-area hide">
+                                <p class="has-text-centered">
+                                    <strong class="is-bold-text">주유 후 주유원에게 바코드를 보여주세요.</strong><br />
+                                    바코드 사용이 어려울 경우,<br />
+                                    주유번호 6자리를 보여주세요.
+                                </p>
+                                <div class="user-guide-img-area">
+                                    <img v-server-image src="/images/img-user-guide.png" alt="일반주유소 사용안내 이미지" />
+                                </div>
+                                </div>
+                            </div>
+                            <!-- LPG일 경우 문구 다르게 추가, 사용시 div 주석 해제 -->
+                            <!-- <div class="contents-section">
+                                <div class="contents-general-area normal">
+                                <p class="has-text-centered">
+                                    <strong class="is-bold-text">충전 후 충전원에게 바코드를 보여주세요.</strong><br />
+                                    바코드 사용이 어려울 경우,<br />
+                                    주유번호 6자리를 보여주세요.
+                                </p>
+                                <div class="user-guide-img-area">
+                                    <img v-server-image src="/images/img-user-guide.png" alt="일반주유소 사용안내 이미지" />
+                                </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!-- *** 바로세차 시 사용 - 사용자 가이드 영역, 사용시 div 주석 해제 *** --> 
+                        <!-- <div class="user-guide-area">
+                            <div class="tab-area b-tabs"></div>
+                            <div class="contents-section">
+                                <div class="contents-self-are show">
+                                <p class="has-text-centered">
+                                    <strong class="is-bold-text">바로세차 결제 시 직원에게 바코드를 보여주세요.</strong><br />
+                                    바코드 사용이 어려울 경우, <br />
+                                    세차번호 6자리를 입력해 주세요.
+                                </p>
+                                <div class="user-guide-img-area">
+                                    <img v-server-image src="/images/img-user-guide-self.png" alt="바코드 사용안내 이미지" />
+                                </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                    <div class="is-button-fixed">
+                        <div class="inner">
+                          <button type="button" class="button is-outline is-fullwidth" @click="hideModal">취소</button>
+                        </div>
+                      </div>
+
+
+                </div>
+            </div>
+        </div>
